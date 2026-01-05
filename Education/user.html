@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar">
+    <h2 class="logo">Edu<span>Vate</span></h2>
+
+    <div class="user-box">
+      <img src="https://i.pravatar.cc/100?img=5">
+      <h4>Meera Jas</h4>
+      <p>student@edulearn.com</p>
+    </div>
+
+    <ul class="menu">
+      <li class="active"><i class="fas fa-gauge"></i> Dashboard</li>
+      <li><i class="fas fa-user"></i> My Profile</li>
+      <li><i class="fas fa-book"></i> My Courses</li>
+      <li><i class="fas fa-file-pen"></i> Assignments</li>
+      <li><i class="fas fa-chart-line"></i> Progress</li>
+      <li><i class="fas fa-calendar-days"></i> Schedule</li>
+      <li><i class="fas fa-gear"></i> Settings</li>
+    </ul>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <!-- TOP BAR -->
+    <div class="topbar">
+      <h3>Student Dashboard</h3>
+      <div class="top-icons">
+        <i class="fas fa-globe"></i>
+        <i class="fas fa-bell"><span>2</span></i>
+
+        <div class="profile-dropdown">
+          <div class="profile-btn" id="profileBtn">
+            <img src="https://i.pravatar.cc/50?img=5">
+            <span>Arun</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <ul class="dropdown-menu" id="profileMenu">
+            <li><i class="fas fa-user"></i> Profile</li>
+            <li><i class="fas fa-gear"></i> Settings</li>
+            <li class="logout"><i class="fas fa-right-from-bracket"></i> Logout</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- WELCOME CARD -->
+    <div class="welcome-card">
+      <div>
+        <h2>Welcome back, Meera!</h2>
+        <p>Track your learning progress and upcoming tasks.</p>
+      </div>
+      <div class="stats">
+        <div>
+          <h3>72%</h3>
+          <p>Overall Progress</p>
+        </div>
+        <div>
+          <h3>3</h3>
+          <p>Pending Assignments</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <!-- COURSE PROGRESS -->
+      <div class="card">
+        <div class="card-header">
+          <h3>My Course Progress</h3>
+          <select>
+            <option>Current Courses</option>
+          </select>
+        </div>
+
+        <div class="progress-item">
+          <span>Python Programming</span><span>80%</span>
+          <div class="bar green" style="width:80%"></div>
+        </div>
+
+        <div class="progress-item">
+          <span>Full Stack Development</span><span>65%</span>
+          <div class="bar blue" style="width:65%"></div>
+        </div>
+
+        <div class="progress-item">
+          <span>Data Structures</span><span>55%</span>
+          <div class="bar yellow" style="width:55%"></div>
+        </div>
+
+        <div class="progress-item">
+          <span>UI / UX Basics</span><span>40%</span>
+          <div class="bar purple" style="width:40%"></div>
+        </div>
+
+        <div class="progress-item">
+          <span>Project Work</span><span>70%</span>
+          <div class="bar red" style="width:70%"></div>
+        </div>
+      </div>
+
+      <!-- STUDY ACTIVITY -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Study Activity</h3>
+          <div class="btns">
+            <button class="active">This Month</button>
+            <button>Last Month</button>
+          </div>
+        </div>
+
+        <div class="circle">
+          <h2>96 hrs</h2>
+          <p>Learning Time</p>
+        </div>
+
+        <ul class="legend">
+          <li><span class="dot green"></span> Video Classes – 45%</li>
+          <li><span class="dot blue"></span> Practice – 30%</li>
+          <li><span class="dot yellow"></span> Tests – 15%</li>
+          <li><span class="dot purple"></span> Projects – 10%</li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  const profileBtn = document.getElementById("profileBtn");
+  const profileMenu = document.getElementById("profileMenu");
+
+  profileBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    profileMenu.style.display =
+      profileMenu.style.display === "block" ? "none" : "block";
+  });
+
+  profileMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+  });
+
+  document.addEventListener("click", function () {
+    profileMenu.style.display = "none";
+  });
+</script>
+
+</body>
+</html>
